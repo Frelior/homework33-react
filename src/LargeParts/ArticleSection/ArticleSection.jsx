@@ -2,7 +2,7 @@ import { styled } from "styled-components"
 
 const StyledArticleSection = styled.section`
   width: 100%;
-  background-color: red;
+  background-color: #fafafa;
 `
 
 export default function ArticleSection({ children }) {
