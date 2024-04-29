@@ -1,9 +1,16 @@
 import Button from "../../Button/Button"
 import InputSearch from "../../InputSearch/InputSearch"
+import { styled } from "styled-components"
+
+const StyledHeader = styled.header`
+  & h1 {
+    margin: 0;
+  }
+`
 
 export default function Header() {
   return (
-    <header className="p-3 bg-dark text-white">
+    <StyledHeader className="p-3 bg-dark text-white">
       <div
         className="container"
         style={{ maxWidth: "100vw" }}
@@ -20,6 +27,6 @@ export default function Header() {
           </div>
         </div>
       </div>
-    </header>
+    </StyledHeader>
   )
 }

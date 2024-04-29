@@ -2,6 +2,7 @@ import Button from "../../Button/Button"
 import { styled } from "styled-components"
 
 const StyledNavBar = styled.nav`
+  position: relative;
   //   flex-grow: 1;
   display: flex;
   flex-direction: column;

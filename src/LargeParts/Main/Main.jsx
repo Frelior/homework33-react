@@ -9,19 +9,9 @@ const StyledMain = styled.main`
   //   padding-top: 50px;
   //   padding-bottom: 50px;
   flex-grow: 1;
-  background-color: #efefef;
+  background-color: transparent;
 `
 
-export default function Main() {
-  return (
-    <StyledMain>
-      <HavBar />
-      <div
-        className=""
-        style={{ backgroundColor: "red", width: "100%" }}
-      >
-        Main
-      </div>
-    </StyledMain>
-  )
+export default function Main({ children }) {
+  return <StyledMain>{children}</StyledMain>
 }
