@@ -48,34 +48,6 @@ export default function VoteForSmile() {
     })
   }
 
-  function countVotes() {
-    let maxValue = 0
-    let maxKeys = []
-
-    for (const key in counters) {
-      if (key === "winner") continue
-      if (counters.hasOwnProperty(key)) {
-        const value = counters[key]
-        if (value > maxValue) {
-          maxValue = value
-          maxKeys = [key]
-        } else if (value === maxValue && value !== 0) {
-          maxKeys.push(key)
-        }
-      }
-    }
-
-    const resultElem = document.querySelector(".result")
-    console.log(counters.winner)
-    if (counters.winner) {
-      resultElem.classList.remove("d-none")
-    }
-
-    setCounters((prev) => {
-      return { ...prev, winner: maxKeys }
-    })
-  }
-
   return (
     <StyledVoteForSmile>
       <h1 className="mt-3 mb-5">Vote for best emoji</h1>
@@ -126,19 +98,6 @@ export default function VoteForSmile() {
           </SmileButton>
         </li>
       </ul>
-      <div>
-        <Button
-          className={"btn btn-outline-dark m-5"}
-          onClick={countVotes}
-        >
-          Show Winner
-        </Button>
-        {counters.winner && (
-          <h3 className=" text-center result">
-            Winner is {emojies[counters.winner?.[0]]}
-          </h3>
-        )}
-      </div>
     </StyledVoteForSmile>
   )
 }
