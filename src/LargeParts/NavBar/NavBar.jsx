@@ -1,5 +1,6 @@
 import Button from "../../Button/Button"
 import { styled } from "styled-components"
+import { useState } from "react"
 
 const StyledNavBar = styled.nav`
   position: relative;
@@ -14,7 +15,11 @@ const StyledNavBar = styled.nav`
   }
 `
 
-export default function NavBar() {
+export default function NavBar({ onActivePage }) {
+  function setActiveTab(page) {
+    onActivePage(page)
+  }
+
   return (
     <StyledNavBar>
       <div
@@ -22,17 +27,30 @@ export default function NavBar() {
         style={{ width: "150px" }}
       >
         <hr></hr>
+
         <ul className="nav nav-pills flex-column mb-auto">
           <li>
-            <Button>one</Button>
+            <Button
+              className="btn btn-outline-light my-2"
+              onClick={() => setActiveTab("Homework34")}
+            >
+              Homework34
+              <hr className="my-0" />
+              Vote for smile
+            </Button>
           </li>
+
           <li>
-            <Button>two</Button>
+            <Button className="btn btn-outline-light my-2">test button</Button>
           </li>
+
           <li>
-            <Button>three</Button>
+            <Button className="btn btn-outline-light my-2">
+              another test button
+            </Button>
           </li>
         </ul>
+
         <hr></hr>
       </div>
     </StyledNavBar>

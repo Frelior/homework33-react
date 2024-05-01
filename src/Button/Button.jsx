@@ -1,6 +1,6 @@
 export default function Button({
-  className,
-  children,
+  className = "btn btn-warning my-2",
+  children = "Button",
   onClick = null,
   ...props
 }) {
@@ -9,7 +9,7 @@ export default function Button({
       {...props}
       onClick={onClick}
       type="button"
-      className={className ? className : "btn btn-warning my-2"}
+      className={className}
     >
       {children}
     </button>
