@@ -1,6 +1,5 @@
 import Button from "../../Button/Button"
 import { styled } from "styled-components"
-import { useState } from "react"
 
 const StyledNavBar = styled.nav`
   position: relative;

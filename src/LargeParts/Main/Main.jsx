@@ -1,5 +1,4 @@
 import { styled } from "styled-components"
-import HavBar from "../../LargeParts/NavBar/NavBar"
 
 const StyledMain = styled.main`
   display: flex;
