@@ -4,6 +4,7 @@ import NavBar from "./LargeParts/NavBar/NavBar"
 import ArticleSection from "./LargeParts/ArticleSection/ArticleSection"
 import VoteForSmile from "./VoteForSmile/VoteForSmile"
 import Home from "./Home/Home"
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import { useState } from "react"
 
 export default function App() {
@@ -14,15 +15,25 @@ export default function App() {
   }
 
   return (
-    <>
-      <Header />
-      <Main>
-        <NavBar onActivePage={handleActivePage} />
-        <ArticleSection>
-          {activePage === "home" && <Home />}
-          {activePage === "Homework34" && <VoteForSmile />}
-        </ArticleSection>
-      </Main>
-    </>
+    <Router>
+      <>
+        <Header />
+        <Main>
+          <NavBar onActivePage={handleActivePage} />
+          <ArticleSection>
+            <Routes>
+              <Route
+                path="/homework33-react"
+                element={<Home />}
+              />
+              <Route
+                path="/homework33-react/VoteForSmile"
+                element={<VoteForSmile />}
+              />
+            </Routes>
+          </ArticleSection>
+        </Main>
+      </>
+    </Router>
   )
 }

@@ -31,6 +31,15 @@ export default function NavBar({ onActivePage }) {
           <li>
             <Button
               className="btn btn-outline-light my-2"
+              onClick={() => setActiveTab("/homework33-react")}
+            >
+              Home page
+            </Button>
+          </li>
+
+          <li>
+            <Button
+              className="btn btn-outline-light my-2"
               onClick={() => setActiveTab("Homework34")}
             >
               Homework34
