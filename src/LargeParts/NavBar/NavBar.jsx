@@ -1,5 +1,6 @@
 import Button from "../../Button/Button"
 import { styled } from "styled-components"
+import { useNavigate } from "react-router-dom"
 
 const StyledNavBar = styled.nav`
   position: relative;
@@ -14,9 +15,11 @@ const StyledNavBar = styled.nav`
   }
 `
 
-export default function NavBar({ onActivePage }) {
+export default function NavBar() {
+  const navigate = useNavigate()
+
   function setActiveTab(page) {
-    onActivePage(page)
+    navigate(page)
   }
 
   return (
@@ -26,7 +29,6 @@ export default function NavBar({ onActivePage }) {
         style={{ width: "150px" }}
       >
         <hr></hr>
-
         <ul className="nav nav-pills flex-column mb-auto">
           <li>
             <Button
@@ -40,7 +42,7 @@ export default function NavBar({ onActivePage }) {
           <li>
             <Button
               className="btn btn-outline-light my-2"
-              onClick={() => setActiveTab("Homework34")}
+              onClick={() => setActiveTab("/homework33-react/VoteForSmile")}
             >
               Homework34
               <hr className="my-0" />
@@ -58,7 +60,6 @@ export default function NavBar({ onActivePage }) {
             </Button>
           </li>
         </ul>
-
         <hr></hr>
       </div>
     </StyledNavBar>

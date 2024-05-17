@@ -8,18 +8,12 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import { useState } from "react"
 
 export default function App() {
-  const [activePage, setActivePage] = useState("home")
-
-  function handleActivePage(page) {
-    setActivePage(page)
-  }
-
   return (
     <Router>
       <>
         <Header />
         <Main>
-          <NavBar onActivePage={handleActivePage} />
+          <NavBar />
           <ArticleSection>
             <Routes>
               <Route
