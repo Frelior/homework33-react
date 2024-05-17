@@ -1,11 +1,13 @@
-import Header from "./LargeParts/Header/Header"
-import Main from "./LargeParts/Main/Main"
-import NavBar from "./LargeParts/NavBar/NavBar"
-import ArticleSection from "./LargeParts/ArticleSection/ArticleSection"
-import VoteForSmile from "./VoteForSmile/VoteForSmile"
-import Home from "./Home/Home"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
-import { useState } from "react"
+
+import {
+  Header,
+  Main,
+  NavBar,
+  ArticleSection,
+  VoteForSmile,
+  Home,
+} from "./export.js"
 
 export default function App() {
   return (
