@@ -7,6 +7,7 @@ import {
   ArticleSection,
   VoteForSmile,
   Home,
+  HomeWork35,
 } from "./export.js"
 
 export default function App() {
@@ -25,6 +26,10 @@ export default function App() {
               <Route
                 path="/homework33-react/VoteForSmile"
                 element={<VoteForSmile />}
+              />
+              <Route
+                path="/homework33-react/To-do-List"
+                element={<HomeWork35 />}
               />
             </Routes>
           </ArticleSection>

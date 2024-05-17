@@ -51,12 +51,13 @@ export default function NavBar() {
           </li>
 
           <li>
-            <Button className="btn btn-outline-light my-2">test button</Button>
-          </li>
-
-          <li>
-            <Button className="btn btn-outline-light my-2">
-              another test button
+            <Button
+              className="btn btn-outline-light my-2"
+              onClick={() => setActiveTab("/homework33-react/To-do-List")}
+            >
+              Homework35
+              <hr className="my-0" />
+              To-do List
             </Button>
           </li>
         </ul>
