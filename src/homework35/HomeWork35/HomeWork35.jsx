@@ -1,11 +1,10 @@
 import { StyledHomeWork35 } from "./HomeWork35"
-import MyForm from "../Form/Form"
+import TaskForm from "../Form/MyForm"
 
 export default function HomeWork35() {
   return (
     <StyledHomeWork35>
-      {/* <Form>sad</Form> */}
-      <MyForm></MyForm>
+      <TaskForm></TaskForm>
     </StyledHomeWork35>
   )
 }

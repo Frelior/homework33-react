@@ -1,6 +1,7 @@
 import { styled } from "styled-components"
 
 export const StyledForm = styled.form`
+  width: 30%;
   background-color: #fff;
   display: flex;
   flex-direction: column;
