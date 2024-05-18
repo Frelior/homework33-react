@@ -8,4 +8,9 @@ export const StyledToDoListItem = styled.li`
   border-radius: 0.5rem;
   background-color: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+  & p {
+    text-align: left;
+    margin: 0;
+  }
 `

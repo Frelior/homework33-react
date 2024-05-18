@@ -12,28 +12,18 @@ const TaskForm = ({ addTask }) => {
   })
 
   return (
-    <Formik
-      initialValues={initialValues}
-      validationSchema={validationSchema}
-      onSubmit={(values, { resetForm }) => {
-        addTask(values.task)
-        resetForm()
-      }}
-    >
-      {() => (
-        <Form>
-          <Field
-            name="task"
-            placeholder="Enter your task"
-          />
-          <ErrorMessage
-            name="task"
-            component="div"
-          />
-          <button type="submit">Add Task</button>
-        </Form>
-      )}
-    </Formik>
+    <StyledForm>
+      <div className={"card"}>
+        <div className="card-body">
+          <Formik
+            initialValues={{ title: "" }}
+            onSubmit={(values) => console.log(values)}
+          >
+            {({ errors, touched }) => <Form></Form>}
+          </Formik>
+        </div>
+      </div>
+    </StyledForm>
   )
 }
 
