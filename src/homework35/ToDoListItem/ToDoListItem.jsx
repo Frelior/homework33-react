@@ -1,5 +1,5 @@
 import { StyledToDoListItem } from "./StyledToDoListItem"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 // const defff = {
 //   id: 1,
@@ -10,11 +10,20 @@ import { useState } from "react"
 export default function ToDoListItem({ object }) {
   const [completed, setCompleted] = useState(object.completed)
 
+  const asda = useEffect(
+    (prev) => {
+      const localStorage88 = JSON.parse(localStorage.getItem("tasks"))
+      localStorage88.find((el) => el.id === object.id).completed = !prev
+      localStorage.setItem("tasks", JSON.stringify(localStorage88))
+    },
+    [completed]
+  )
+
   return (
     <StyledToDoListItem
       onClick={() =>
         setCompleted((prev) => {
-          object.completed = !prev
+          asda(prev)
           console.log(object)
           return !prev
         })

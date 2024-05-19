@@ -11,6 +11,12 @@ const toDoImitate = [
   { id: 5, title: "Задача", completed: false },
 ]
 
+const localStorageTasks = JSON.parse(localStorage.getItem("tasks"))
+
+if (localStorageTasks) {
+  toDoImitate.push(...localStorageTasks)
+}
+
 export default function HomeWork35() {
   return (
     <StyledHomeWork35>
