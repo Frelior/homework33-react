@@ -8,5 +8,16 @@ export const StyledList = styled.ul`
   flex-direction: column;
   flex-grow: 2;
   width: 50%;
-  border: 1px solid black;
+  height: 74vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  border: 2px solid #bbbbbb;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  &::-webkit-scrollbar {
+    width: 0.5rem;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #bbbbbb;
+    border-radius: 0.5rem;
 `

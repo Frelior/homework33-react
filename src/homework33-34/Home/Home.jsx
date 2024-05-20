@@ -16,9 +16,6 @@ export default function Home() {
       <h1>Home Page</h1>
       <p>
         Im planning to make navigation by buttons in left side of the screen.
-        <hr />
-        However now it seems a bit weird, i'm sure that I'll have to remake it
-        later.
       </p>
     </StyledHome>
   )

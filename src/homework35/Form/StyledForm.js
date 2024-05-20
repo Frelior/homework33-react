@@ -1,7 +1,7 @@
 import { styled } from "styled-components"
 
 export const StyledForm = styled.div`
-  // width: 30%;
+  max-width: 23%;
   background-color: #fff;
   display: flex;
   flex-direction: column;
@@ -11,5 +11,13 @@ export const StyledForm = styled.div`
   flex-grow: 1;
   .card {
     border: none;
+  }
+  & form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    & .form-control.is-invalid {
+      // padding: inerhit;
+    }
   }
 `
