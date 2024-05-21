@@ -1,15 +1,8 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import { BrowserRouter as Router, useRoutes } from "react-router-dom"
+import { Header, Main, NavBar, ArticleSection } from "./export.js"
+import routesConfig from "./routesConfig.js"
 
-import {
-  Header,
-  Main,
-  NavBar,
-  ArticleSection,
-  VoteForSmile,
-  Home,
-  HomeWork35,
-  HomeWork36,
-} from "./export.js"
+const AppRoutes = () => useRoutes(routesConfig)
 
 export default function App() {
   return (
@@ -19,24 +12,7 @@ export default function App() {
         <Main>
           <NavBar />
           <ArticleSection>
-            <Routes>
-              <Route
-                path="/homework33-react"
-                element={<Home />}
-              />
-              <Route
-                path="/homework33-react/VoteForSmile"
-                element={<VoteForSmile />}
-              />
-              <Route
-                path="/homework33-react/To-do-List"
-                element={<HomeWork35 />}
-              />
-              <Route
-                path="/homework33-react/Formik"
-                element={<HomeWork36 />}
-              />
-            </Routes>
+            <AppRoutes />
           </ArticleSection>
         </Main>
       </>
