@@ -3,6 +3,7 @@ import { createPortal } from "react-dom"
 import { useRef, useEffect } from "react"
 
 const StyledModalWindow = styled.dialog`
+  position: absolute;
   text-align: center;
   top: 10%;
   min-width: 60%;
