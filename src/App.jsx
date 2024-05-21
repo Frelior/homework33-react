@@ -8,6 +8,7 @@ import {
   VoteForSmile,
   Home,
   HomeWork35,
+  HomeWork36,
 } from "./export.js"
 
 export default function App() {
@@ -30,6 +31,10 @@ export default function App() {
               <Route
                 path="/homework33-react/To-do-List"
                 element={<HomeWork35 />}
+              />
+              <Route
+                path="/homework33-react/Formik"
+                element={<HomeWork36 />}
               />
             </Routes>
           </ArticleSection>

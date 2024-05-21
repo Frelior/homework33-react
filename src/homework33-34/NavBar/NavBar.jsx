@@ -60,6 +60,17 @@ export default function NavBar() {
               To-do List
             </Button>
           </li>
+
+          <li>
+            <Button
+              className="btn btn-outline-light my-2"
+              onClick={() => setActiveTab("/homework33-react/Formik")}
+            >
+              Homework36
+              <hr className="my-0" />
+              Formik
+            </Button>
+          </li>
         </ul>
         <hr></hr>
       </div>
