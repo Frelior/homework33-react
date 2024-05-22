@@ -6,3 +6,5 @@ export { default as VoteForSmile } from "./homework33-34/VoteForSmile/VoteForSmi
 export { default as Home } from "./homework33-34/Home/Home"
 export { default as HomeWork35 } from "./homework35/HomeWork35/HomeWork35.jsx"
 export { default as HomeWork36 } from "./homework36/Homework36/Homework36.jsx"
+export { default as RootLayout } from "./homework33-34/RootLayout/RootLayout.jsx"
+export { default as NotFound } from "./homework33-34/NotFound/NotFound.jsx"

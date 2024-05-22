@@ -1,28 +1,27 @@
-import { VoteForSmile, Home, HomeWork35, HomeWork36 } from "./export.js"
+import {
+  VoteForSmile,
+  Home,
+  HomeWork35,
+  HomeWork36,
+  RootLayout,
+  NotFound,
+} from "./export.js"
 
 const routesConfig = [
   {
-    path: "/homework33-react",
-    element: <Home />,
-    exact: true,
+    path: "/",
+    element: <RootLayout />,
     children: [
+      { path: "/", element: <Home />, title: "Home" },
       {
-        path: "/homework33-react/test",
+        path: "/homeWork34",
         element: <VoteForSmile />,
+        title: "HomeWork34",
       },
+      { path: "/homework35", element: <HomeWork35 />, title: "HomeWork35" },
+      { path: "/homework36", element: <HomeWork36 />, title: "HomeWork36" },
+      { path: "*", element: <NotFound /> },
     ],
-  },
-  {
-    path: "/homework33-react/VoteForSmile",
-    element: <VoteForSmile />,
-  },
-  {
-    path: "/homework33-react/To-do-List",
-    element: <HomeWork35 />,
-  },
-  {
-    path: "/homework33-react/Formik",
-    element: <HomeWork36 />,
   },
 ]
 

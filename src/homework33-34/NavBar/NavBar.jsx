@@ -1,6 +1,8 @@
 import Button from "../Button/Button"
+import { Link } from "react-router-dom"
 import { styled } from "styled-components"
 import { useNavigate } from "react-router-dom"
+import routesConfig from "../../routesConfig.js"
 
 const StyledNavBar = styled.nav`
   position: relative;
@@ -22,55 +24,29 @@ export default function NavBar() {
     navigate(page)
   }
 
+  const routes = routesConfig[0].children
+
   return (
     <StyledNavBar>
-      <div
-        className="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark"
-        style={{ width: "150px" }}
-      >
+      <div className="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark">
         <hr></hr>
         <ul className="nav nav-pills flex-column mb-auto">
-          <li>
-            <Button
-              className="btn btn-outline-light my-2"
-              onClick={() => setActiveTab("/homework33-react")}
-            >
-              Home page
-            </Button>
-          </li>
-
-          <li>
-            <Button
-              className="btn btn-outline-light my-2"
-              onClick={() => setActiveTab("/homework33-react/VoteForSmile")}
-            >
-              Homework34
-              <hr className="my-0" />
-              Vote for smile
-            </Button>
-          </li>
-
-          <li>
-            <Button
-              className="btn btn-outline-light my-2"
-              onClick={() => setActiveTab("/homework33-react/To-do-List")}
-            >
-              Homework35
-              <hr className="my-0" />
-              To-do List
-            </Button>
-          </li>
-
-          <li>
-            <Button
-              className="btn btn-outline-light my-2"
-              onClick={() => setActiveTab("/homework33-react/Formik")}
-            >
-              Homework36
-              <hr className="my-0" />
-              Formik
-            </Button>
-          </li>
+          {routes.map((route) => {
+            if (route.path === "*") return
+            return (
+              <li
+                key={route.path}
+                className="btn btn-outline-light my-2 p-0"
+              >
+                <Link
+                  to={route.path}
+                  className="nav-link fw-bold"
+                >
+                  {route.title}
+                </Link>
+              </li>
+            )
+          })}
         </ul>
         <hr></hr>
       </div>
