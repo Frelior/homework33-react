@@ -5,6 +5,12 @@ const routesConfig = [
     path: "/homework33-react",
     element: <Home />,
     exact: true,
+    children: [
+      {
+        path: "/homework33-react/test",
+        element: <VoteForSmile />,
+      },
+    ],
   },
   {
     path: "/homework33-react/VoteForSmile",

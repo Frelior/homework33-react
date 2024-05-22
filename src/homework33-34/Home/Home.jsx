@@ -1,5 +1,5 @@
 import { styled } from "styled-components"
-
+import { Outlet } from "react-router-dom"
 const StyledHome = styled.div`
   padding-top: 3rem;
   h1 {
@@ -17,6 +17,7 @@ export default function Home() {
       <p>
         Im planning to make navigation by buttons in left side of the screen.
       </p>
+      <Outlet />
     </StyledHome>
   )
 }
