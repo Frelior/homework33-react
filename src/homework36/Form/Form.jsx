@@ -28,7 +28,7 @@ export default function Form() {
         }}
         validationSchema={validationSchema}
       >
-        {({ errors, touched }) => (
+        {({ errors, touched, isValid, dirty }) => (
           <FormikForm>
             <FormField
               warning={errors.name && touched.name}
@@ -46,10 +46,7 @@ export default function Form() {
               type="tel"
             ></FormField>
             <button
-              disabled={
-                Object.keys(errors).length > 0 ||
-                Object.keys(touched).length === 0
-              }
+              disabled={!(isValid && dirty)}
               type="submit"
               className="btn btn-primary"
             >

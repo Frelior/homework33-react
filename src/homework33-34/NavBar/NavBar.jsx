@@ -1,7 +1,5 @@
-import Button from "../Button/Button"
 import { Link } from "react-router-dom"
 import { styled } from "styled-components"
-import { useNavigate } from "react-router-dom"
 import routesConfig from "../../routesConfig.js"
 
 const StyledNavBar = styled.nav`
@@ -18,12 +16,6 @@ const StyledNavBar = styled.nav`
 `
 
 export default function NavBar() {
-  const navigate = useNavigate()
-
-  function setActiveTab(page) {
-    navigate(page)
-  }
-
   const routes = routesConfig[0].children
 
   return (
@@ -32,7 +24,7 @@ export default function NavBar() {
         <hr></hr>
         <ul className="nav nav-pills flex-column mb-auto">
           {routes.map((route) => {
-            if (route.path === "*") return
+            if (route.path === "*") return null
             return (
               <li
                 key={route.path}
