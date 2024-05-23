@@ -24,6 +24,7 @@ export default function HomeWork37() {
     <StyledHomeWork37>
       <h1>Homework37</h1>
       {loading ? "loading users..." : <UserList users={users} />}
+      <hr className="w-100" />
       <Outlet />
     </StyledHomeWork37>
   )

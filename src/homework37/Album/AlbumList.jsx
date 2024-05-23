@@ -8,13 +8,13 @@ export default function AlbumList({ userId }) {
 
   useEffect(() => {
     axios
-      .get(`https://jsonplaceholder.typicode.com/albums/${userId}`)
+      .get(`https://jsonplaceholder.typicode.com/albums?userId=${userId}`)
       .then((data) => {
-        console.log(data)
+        setAlbums(data.data)
       })
   })
   return (
-    <List>
+    <List className="bg-dark p-2">
       {albums.map((album) => (
         <Album
           key={album.id}

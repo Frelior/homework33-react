@@ -13,6 +13,7 @@ const routesConfig = [
   {
     path: "/",
     element: <RootLayout />,
+    errorElement: <NotFound />,
     children: [
       { path: "/", element: <Home />, title: "Home" },
       {
@@ -29,7 +30,7 @@ const routesConfig = [
         children: [
           {
             path: "user/:userId",
-            element: <AlbumList userId={4}></AlbumList>,
+            element: <AlbumList userId={1}></AlbumList>,
           },
         ],
       },
