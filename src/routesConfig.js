@@ -25,7 +25,16 @@ const routesConfig = [
         path: "homework37",
         element: <HomeWork37 />,
         title: "HomeWork37",
-        children: [],
+        children: [
+          {
+            path: "user/:userId",
+            element: (
+              <div>
+                <p>meow</p>
+              </div>
+            ),
+          },
+        ],
       },
       { path: "*", element: <NotFound /> },
     ],
