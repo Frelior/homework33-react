@@ -6,6 +6,7 @@ import {
   HomeWork37,
   RootLayout,
   NotFound,
+  AlbumList,
 } from "./export.js"
 
 const routesConfig = [
@@ -28,11 +29,7 @@ const routesConfig = [
         children: [
           {
             path: "user/:userId",
-            element: (
-              <div>
-                <p>meow</p>
-              </div>
-            ),
+            element: <AlbumList userId={4}></AlbumList>,
           },
         ],
       },
