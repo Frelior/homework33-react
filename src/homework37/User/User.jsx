@@ -6,7 +6,7 @@ export default function User({ user, ...props }) {
     <StyledUser {...props}>
       <h5>{user.name}</h5>
       <Link
-        className=" btn btn-primary m-0 btn-sm text-white"
+        className="btn btn-primary m-0 btn-sm text-white"
         to={`user/${user.id}`}
       >
         Albums

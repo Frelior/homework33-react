@@ -10,3 +10,4 @@ export { default as RootLayout } from "./homework33-34/RootLayout/RootLayout.jsx
 export { default as NotFound } from "./homework33-34/NotFound/NotFound.jsx"
 export { default as HomeWork37 } from "./homework37/Homework37/Homework37.jsx"
 export { default as AlbumList } from "./homework37/Album/AlbumList.jsx"
+export { default as PhotoList } from "./homework37/Photo/PhotoList.jsx"

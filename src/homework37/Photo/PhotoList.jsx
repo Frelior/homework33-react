@@ -1,50 +1,49 @@
-import Album from "./Album"
+import Photo from "./Photo.jsx"
 import List from "../List/List.jsx"
 import axios from "axios"
 import { useState, useEffect } from "react"
-import { useParams, Outlet } from "react-router-dom"
+import { useParams } from "react-router-dom"
 
-export default function AlbumList() {
-  const [albums, setAlbums] = useState([])
+export default function PhotoList() {
+  const [photos, setPhotos] = useState([])
   const [loading, setLoading] = useState(true)
-  const { userId } = useParams()
+  const { albumId } = useParams()
 
   useEffect(() => {
     const controller = new AbortController()
     setLoading(true)
     axios
-      .get(`https://jsonplaceholder.typicode.com/albums?userId=${userId}`, {
+      .get(`https://jsonplaceholder.typicode.com/photos?albumId=${albumId}`, {
         signal: controller.signal,
       })
       .then((data) => {
-        setAlbums(data.data)
+        setPhotos(data.data)
         setLoading(false)
       })
       .catch((err) => {
         if (!axios.isCancel(err)) {
           console.error(err)
+          setLoading(false)
         }
-        setLoading(false)
       })
 
     return () => controller.abort()
-  }, [userId])
+  }, [albumId])
 
   return (
     <>
       {loading ? (
-        "loading albums..."
+        "loading photos..."
       ) : (
         <List className="p-2">
-          {albums.map((album) => (
-            <Album
-              key={album.id}
-              album={album}
-            ></Album>
+          {photos.map((photo) => (
+            <Photo
+              key={photo.id}
+              photo={photo}
+            ></Photo>
           ))}
         </List>
       )}
-      <Outlet />
     </>
   )
 }

@@ -7,6 +7,7 @@ import {
   RootLayout,
   NotFound,
   AlbumList,
+  PhotoList,
 } from "./export.js"
 
 const routesConfig = [
@@ -30,7 +31,13 @@ const routesConfig = [
         children: [
           {
             path: "user/:userId",
-            element: <AlbumList userId={1}></AlbumList>,
+            element: <AlbumList></AlbumList>,
+            children: [
+              {
+                path: "album/:albumId",
+                element: <PhotoList></PhotoList>,
+              },
+            ],
           },
         ],
       },

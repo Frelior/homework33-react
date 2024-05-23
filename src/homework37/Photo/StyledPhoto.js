@@ -1,6 +1,6 @@
 import { styled } from "styled-components"
 
-export const StyledAlbum = styled.div`
+export const StyledPhoto = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -9,6 +9,6 @@ export const StyledAlbum = styled.div`
   background-color: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   border-radius: 0.5rem;
-  flex: 1 0 18%;
+  flex: 1 0 8%;
   justify-content: space-between;
 `
