@@ -10,6 +10,8 @@ import {
   PhotoList,
 } from "./export.js"
 
+import TestingPage from "./testing/TestingPage.jsx"
+
 const routesConfig = [
   {
     path: "/",
@@ -41,6 +43,7 @@ const routesConfig = [
           },
         ],
       },
+      { path: "testingPage", element: <TestingPage />, title: "TestingPage" },
       { path: "*", element: <NotFound /> },
     ],
   },
