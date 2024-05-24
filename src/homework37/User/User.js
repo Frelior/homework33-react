@@ -3,6 +3,7 @@ import { styled } from "styled-components"
 export const StyledUser = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   padding: 0.5rem;
   border: 1px solid #b9b9b9;
