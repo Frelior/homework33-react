@@ -1,9 +1,13 @@
 import { StyledToDoListItem } from "./StyledToDoListItem"
+import { useDispatch } from "react-redux"
+import { toggleTodo, removeTodo } from "../store/todoSlice"
 
 export default function ToDoListItem({ object, onClick, onDelete, ...props }) {
+  const dispatch = useDispatch()
+
   return (
-    <StyledToDoListItem onClick={null}>
-      {/* <div className={`card ${object.completed ? "bg-success" : "bg-warning"}`}>
+    <StyledToDoListItem onClick={() => dispatch(toggleTodo(object.id))}>
+      <div className={`card ${object.completed ? "bg-success" : "bg-warning"}`}>
         <div className="card-body">
           <p>
             <span>{object.completed ? "Completed" : "To do"}</span>
@@ -13,11 +17,13 @@ export default function ToDoListItem({ object, onClick, onDelete, ...props }) {
       </div>
       <button
         className="btn btn-danger delete-btn"
-        onClick={() => onDelete(object.id)}
+        onClick={(e) => {
+          e.stopPropagation()
+          dispatch(removeTodo(object.id))
+        }}
       >
         Delete
-      </button> */}
-      <p>meow</p>
+      </button>
     </StyledToDoListItem>
   )
 }
