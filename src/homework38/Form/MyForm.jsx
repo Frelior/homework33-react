@@ -4,8 +4,10 @@ import { validationSchema } from "./validation"
 import { nanoid } from "nanoid"
 import { addTodo } from "../store/todoSlice"
 import { useDispatch } from "react-redux"
+import { useState } from "react"
 
 export default function TaskForm() {
+  const [focused, setFocused] = useState(false)
   const dispatch = useDispatch()
 
   function createTask(title) {
@@ -36,8 +38,10 @@ export default function TaskForm() {
                         errors.title && touched.title && "is-invalid"
                       }`}
                       placeholder="Enter title"
+                      onFocus={() => setFocused(true)}
+                      onBlur={() => setFocused(false)}
                     ></Field>
-                    {!isValid && (
+                    {!isValid && focused && (
                       <ErrorMessage
                         name="title"
                         component="div"
