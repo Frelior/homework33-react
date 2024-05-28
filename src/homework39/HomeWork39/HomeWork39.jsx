@@ -8,7 +8,7 @@ export default function HomeWork39() {
   return (
     <Provider store={store}>
       <StyledHomeWork39>
-        {/* <TaskForm></TaskForm> */}
+        <TaskForm></TaskForm>
         <List></List>
       </StyledHomeWork39>
     </Provider>

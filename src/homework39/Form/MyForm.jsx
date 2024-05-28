@@ -1,8 +1,8 @@
 import { StyledForm } from "./StyledForm"
-import { Formik, Form, Field, ErrorMessage } from "formik"
+import { Formik, Field, Form, ErrorMessage } from "formik"
 import { validationSchema } from "./validation"
 import { nanoid } from "nanoid"
-import { addTodo } from "../store/todoSlice"
+import { addAsyncTodo } from "../store/todoSlice"
 import { useDispatch } from "react-redux"
 import { useState } from "react"
 
@@ -11,7 +11,8 @@ export default function TaskForm() {
   const dispatch = useDispatch()
 
   function createTask(title) {
-    return { title: title, id: nanoid(), completed: false }
+    const task = { title: title, id: nanoid(), completed: false }
+    return task
   }
 
   return (
@@ -22,7 +23,7 @@ export default function TaskForm() {
             initialValues={{ title: "" }}
             validationSchema={validationSchema}
             onSubmit={(values, { resetForm }) => {
-              dispatch(addTodo(createTask(values.title)))
+              dispatch(addAsyncTodo(createTask(values.title)))
               resetForm()
             }}
           >

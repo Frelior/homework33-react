@@ -44,7 +44,7 @@ const routesConfig = [
         ],
       },
       { path: "homework38", element: <Homework38 />, title: "HomeWork38" },
-      { path: "homework39", element: <Homework39 />, title: "HomeWork38" },
+      { path: "homework39", element: <Homework39 />, title: "HomeWork39" },
       { path: "*", element: <NotFound /> },
     ],
   },
