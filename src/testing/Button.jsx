@@ -1,10 +1,10 @@
-import React, { useContext } from "react"
-import { ButtonClicksContext } from "./TestingPage.jsx"
+import { useDispatch } from "react-redux"
+import { increment } from "./store/clickCounter/clickCounterSlice"
 
 const Button = () => {
-  const { handleClick } = useContext(ButtonClicksContext)
+  const dispatch = useDispatch()
 
-  return <button onClick={handleClick}>Button +1</button>
+  return <button onClick={() => dispatch(increment())}>Button +1</button>
 }
 
 export default Button

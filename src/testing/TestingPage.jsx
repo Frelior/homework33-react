@@ -1,24 +1,16 @@
-import React, { createContext, useState } from "react"
 import Button from "./Button.jsx"
 import Text from "./Text.jsx"
-
-export const ButtonClicksContext = createContext()
+import List from "./List/List.jsx"
+import { Provider } from "react-redux"
+import store from "./store/index.js"
 
 const TestingPage = () => {
-  const [clicks, setClicks] = useState(1)
-
-  const handleClick = () => {
-    setClicks((prev) => prev + 1)
-    console.log(clicks)
-  }
-
-  const value = { clicks, handleClick }
-
   return (
-    <ButtonClicksContext.Provider value={value}>
+    <Provider store={store}>
       <Button></Button>
       <Text></Text>
-    </ButtonClicksContext.Provider>
+      <List></List>
+    </Provider>
   )
 }
 

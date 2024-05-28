@@ -1,8 +1,8 @@
-import React, { useContext } from "react"
-import { ButtonClicksContext } from "./TestingPage.jsx"
+import { useSelector } from "react-redux"
 
 const Text = () => {
-  const { clicks } = useContext(ButtonClicksContext)
+  const clicks = useSelector((state) => state.clickCounter)
+
   return (
     <div>
       <h1>{clicks}</h1>
