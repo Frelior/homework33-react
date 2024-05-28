@@ -1,5 +1,5 @@
-import { StyledForm } from "./StyledForm"
-import { Formik, Field, Form, ErrorMessage } from "formik"
+import { StyledForm, StyledFormikForm } from "./StyledForm"
+import { Formik, Field, ErrorMessage } from "formik"
 import { validationSchema } from "./validation"
 import { nanoid } from "nanoid"
 import { addAsyncTodo } from "../store/todoSlice"
@@ -17,7 +17,7 @@ export default function TaskForm() {
 
   return (
     <StyledForm>
-      <div className={"card"}>
+      <div className={"card border-0"}>
         <div className="card-body p-0">
           <Formik
             initialValues={{ title: "" }}
@@ -29,7 +29,7 @@ export default function TaskForm() {
           >
             {({ errors, touched, isValid }) => {
               return (
-                <Form>
+                <StyledFormikForm>
                   <h4>Add new task</h4>
                   <div>
                     <Field
@@ -57,7 +57,7 @@ export default function TaskForm() {
                   >
                     Add
                   </button>
-                </Form>
+                </StyledFormikForm>
               )
             }}
           </Formik>

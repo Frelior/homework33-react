@@ -1,4 +1,5 @@
 import { styled } from "styled-components"
+import { Form } from "formik"
 
 export const StyledForm = styled.div`
   max-width: 23%;
@@ -9,12 +10,9 @@ export const StyledForm = styled.div`
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   flex-grow: 1;
-  .card {
-    border: none;
-  }
-  & form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
+`
+export const StyledFormikForm = styled(Form)`
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 `
